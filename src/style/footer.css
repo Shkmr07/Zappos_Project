@@ -1,0 +1,121 @@
+.formContainer{
+    padding: 32px 48px;
+    background-color: #D9EAFD;
+}
+
+.formDetails{
+    display: flex;
+    width: 650px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formDetails h2{
+    font-size: larger;
+    font-weight: bold;
+}
+
+.form{
+    display: flex;
+    gap: 15px;
+    padding: 0px 20px 0px 0px;
+
+}
+
+.form input{
+    padding: 15px;
+    border-radius: 10px;
+    flex-grow: 1;
+}
+
+.form button{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.info-details{
+    padding: 32px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-detailsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.social-media{
+    display: flex;
+    gap: 30px;
+    font-size: 22px;
+}
+
+.info-pages{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    border-bottom: 2px dotted black;
+    padding-bottom: 50px;
+}
+
+.info-pages div h3{
+    font-weight: bold;
+
+}
+
+.info-pages div ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.info-pages div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.copyright{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.copyright ul{
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+
+.copyright p{
+    font-size: small;
+}
+
+
+
+@media screen and (max-width:768px) {
+    .form{
+        flex-direction: column;
+    }
+
+    .formDetails{
+        width: 100%;
+    }
+
+    .formContainer{
+        padding: 16px 24px;
+    }
+
+    .info-details{
+        padding: 24px;
+    }
+    
+}
