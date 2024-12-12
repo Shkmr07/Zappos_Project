@@ -63,10 +63,22 @@
     padding-bottom: 50px;
 }
 
-.info-pages div h3{
+.info-pages div div h3{
     font-weight: bold;
-
 }
+
+.info-pages div div{
+    padding-bottom: 10px;
+}
+
+
+
+
+.info-pages div div svg{
+    display: none;
+}
+
+
 
 .info-pages div ul{
     display: flex;
@@ -75,11 +87,6 @@
     font-size: 14px;
 }
 
-.info-pages div{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 
 .copyright{
     display: flex;
@@ -117,5 +124,29 @@
     .info-details{
         padding: 24px;
     }
+
     
+}
+
+
+@media screen and (max-width:480px) {
+    
+    
+    
+    .info-pages{
+        grid-template-columns: repeat(1,1fr);
+        border: none;
+        padding: 0px;
+    }
+
+    .info-pages div div svg{
+        display: inline;
+    }
+
+    .info-pages  div  div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1.5px dotted black;
+    }
 }

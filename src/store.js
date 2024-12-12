@@ -7,14 +7,16 @@ const rootReducer = createSlice({
     initialState:{
         sidebar : false,
         searchSidebar : false,
+        openSection : null,
     },
     reducers:{
         sidebar : (state)=> {state.sidebar = !state.sidebar},
-        searchSidebarToggle : (state)=> {state.searchSidebar = !state.searchSidebar}
+        searchSidebarToggle : (state)=> {state.searchSidebar = !state.searchSidebar},
+        toggleSection : (state,action) => {state.openSection = state.openSection === action.payload?null:action.payload},
     }
 })
 
-export const {sidebar,searchSidebarToggle} = rootReducer.actions
+export const {sidebar,searchSidebarToggle,toggleSection} = rootReducer.actions
 
 
 const store = configureStore({
