@@ -26,3 +26,23 @@
 .hideSidebar{
     display: none;
 }
+
+
+.sidebarMenu div div{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px dotted black;
+}
+
+.sidebarMenu div div h2{
+    font-weight: bold;
+}
+
+.sidebarMenu div ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px ;
+    padding: 5px 20px;
+    border-bottom: 1px dotted black;
+}

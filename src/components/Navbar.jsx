@@ -6,10 +6,18 @@ import { NavLink } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { searchSidebarToggle, sidebar } from '../store'
 import '../style/navbar.css'
+import { useState } from 'react'
 
 export default function Navbar() {
 
   const dispatch = useDispatch()
+  const navItem = ['New','Women','Men','Kids','Collections','Brands','Sale','Activity','Gifts']
+  const [isActive,setIsActive]  = useState(false)
+
+  function toggle(){
+    setIsActive((prev)=>!prev)
+  }
+
 
   return (
     <div className='headerContainer'>
@@ -30,15 +38,12 @@ export default function Navbar() {
 
       <div className='navbarContainer'>
         <nav>
-          <NavLink>New</NavLink>
-          <NavLink>Women</NavLink>
-          <NavLink>Men</NavLink>
-          <NavLink>Kids</NavLink>
-          <NavLink>Collections</NavLink>
-          <NavLink>Brands</NavLink>
-          <NavLink>Sale</NavLink>
-          <NavLink>Activity</NavLink>
-          <NavLink>Gifts</NavLink>
+          {navItem.map(item=>(
+            <>
+            <NavLink to='/' onClick={toggle} >{item}</NavLink>
+            {isActive && <div>hello</div>}
+            </>
+          ))}
         </nav>
         <div className='helpSupport'>
           <NavLink>Help & Support</NavLink>
