@@ -50,9 +50,11 @@ export default function Footer() {
               <div
                 onClick={() => dispatch(toggleSection("about-zappos"))}
                 style={
+                  isMobile?
                   openSection === "about-zappos"
                     ? { borderBottom: "none" }
                     : { borderBottom: "1.5px dotted black" }
+                  :{}
                 }
               >
                 <h3>About Zappos</h3>
@@ -64,12 +66,13 @@ export default function Footer() {
               {(isMobile ? openSection === "about-zappos" : true) && (
                 <ul
                   style={
-                    openSection === "about-zappos"
+                    isMobile
                       ? {
                           borderBottom: "1.5px dotted black",
                           paddingBottom: "10px",
                         }
                       : {}
+        
                   }
                 >
                   <li>
@@ -106,9 +109,11 @@ export default function Footer() {
               <div
                 onClick={() => dispatch(toggleSection("customer-service"))}
                 style={
+                  isMobile?
                   openSection === "customer-service"
                     ? { borderBottom: "none" }
                     : { borderBottom: "1.5px dotted black" }
+                  :{}
                 }
               >
                 <h3>Customer Service</h3>
@@ -120,7 +125,7 @@ export default function Footer() {
               {(isMobile ? openSection === "customer-service" : true) && (
                 <ul
                   style={
-                    openSection === "customer-service"
+                    isMobile
                       ? {
                           borderBottom: "1.5px dotted black",
                           paddingBottom: "10px",
@@ -150,9 +155,11 @@ export default function Footer() {
               <div
                 onClick={() => dispatch(toggleSection("resources"))}
                 style={
+                  isMobile?
                   openSection === "resources"
                     ? { borderBottom: "none" }
                     : { borderBottom: "1.5px dotted black" }
+                  :{}
                 }
               >
                 <h3>Resources</h3>
@@ -163,7 +170,7 @@ export default function Footer() {
               {(isMobile ? openSection === "resources" : true) && (
                 <ul
                   style={
-                    openSection === "resources"
+                    isMobile
                       ? {
                           borderBottom: "1.5px dotted black",
                           paddingBottom: "10px",
@@ -202,9 +209,11 @@ export default function Footer() {
               <div
                 onClick={() => dispatch(toggleSection("explore-zappos"))}
                 style={
+                  isMobile?
                   openSection === "explore-zappos"
                     ? { borderBottom: "none" }
                     : { borderBottom: "1.5px dotted black" }
+                  :{}
                 }
               >
                 <h3>Explore Zappos</h3>
@@ -215,7 +224,7 @@ export default function Footer() {
               {(isMobile ? openSection === "explore-zappos" : true) && (
                 <ul
                   style={
-                    openSection === "explore-zappos"
+                    isMobile
                       ? {
                           borderBottom: "1.5px dotted black",
                           paddingBottom: "10px",
