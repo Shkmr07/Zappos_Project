@@ -3,15 +3,30 @@
 }
 
 .contact h1{
-    margin-bottom: 16px;
     font-size: 24px;
+    margin-bottom: 16px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
-.contact-info{
-    width: 960px;
-    margin: 0 auto;
-}
 
 .contact-info p{
     margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.contact-info h3{
+    font-weight: bold;
+}
+
+.contact-info a{
+    text-decoration: underline;
+    font-weight: 400;
+    text-underline-offset: 4px;
+    
+}
+
+.contact-info a:hover{
+    color: blue;
 }

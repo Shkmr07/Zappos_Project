@@ -1,0 +1,175 @@
+
+
+.trendingNow{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px;
+    gap: 20px;
+}
+
+.trendingNow h1{
+    font-size: 24px;
+    font-weight: bold;
+}
+  
+  .trandingNowSub-Div {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Adjust column count for responsiveness */
+    text-align: center;
+    gap: 20px; /* Larger gap for better spacing */
+  }
+  
+  .trandingNowSub-Div div {
+    /* border: 1px dotted green; */
+    padding: 10px; /* Add padding for content inside the grid items */
+    border-radius: 5px; /* Optional: Make the border corners rounded */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+  }
+  
+  .trandingNowSub-Div div:hover {
+    transform: scale(1.05); /* Slight scaling on hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add hover shadow */
+  }
+  
+  .trandingNowSub-Div div img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain; /* Ensure images are properly cropped and aligned */
+    border-radius: 5px; /* Match the border radius */
+  }
+  
+  .trandingNowSub-Div div a {
+    display: block; /* Make the link take full width */
+    margin-top: 10px; /* Add spacing between image and link */
+    font-size: 16px; /* Adjust font size for better readability */
+    font-weight: bold; /* Make the link stand out */
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.3s; /* Smooth color transition for hover */
+  }
+  
+  .trandingNowSub-Div div a:hover {
+    color: #0056b3; /* Darker shade on hover for contrast */
+  }
+
+
+.UGG{
+    display: flex;
+    padding: 15px 30px;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.UGG div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+.UGG div img{
+    width: 100%;
+}
+
+.UGG div a{
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+.feelsLikeHome div{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+
+}
+
+.feelsLikeHome div div{
+    display: flex;
+    flex-direction: column;
+}
+
+.feelsLikeHome div div a{
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.feelsLikeHome {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #FFF0DC;
+    padding: 30px 30px;
+}
+
+.feelsLikeHome h1{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+  
+  @media screen and (max-width:650px) {
+        .trandingNowSub-Div{
+            grid-template-columns: repeat(3,1fr);
+        }
+
+        .trandingNowSub-Div div img {
+            height: 80px;
+        }
+
+        .feelsLikeHome div {
+            display: block;
+            white-space: nowrap;
+            overflow-x: auto;
+        }
+
+        .feelsLikeHome div div{
+            display: inline-block;
+            width: 90%;
+            padding: 10px;
+        }
+
+        .feelsLikeHome div::-webkit-scrollbar{
+            height: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+
+        }
+
+        .feelsLikeHome div::-webkit-scrollbar-thumb{
+            background-color: black;
+            border-radius: 5px;
+        }
+
+        .UGG {
+            display: block;
+            white-space: nowrap;
+            overflow-x: auto;
+        }
+
+        .UGG div{
+            display: inline-block;
+            width: 90%;
+            padding: 10px;
+        }
+
+  }
+
+  @media screen and (max-width:350px) {
+        .trandingNowSub-Div{
+            grid-template-columns: repeat(2,1fr);
+        }
+
+  }
+
+
+
+
+
+  

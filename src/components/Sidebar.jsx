@@ -4,19 +4,52 @@ import { faCircleXmark, faCircleUser } from '@fortawesome/free-regular-svg-icons
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import '../style/Sidebar.css'
 import { sidebar, toggleSection } from '../store'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
+
+
+import { Avatar, Circle, Float } from "@chakra-ui/react"
+
+const UserProfile = ({ name }) => {
+  return (
+    <Avatar.Root 
+      colorPalette="green" 
+      variant="subtle" 
+      style={{ width: '35px', height: '35px' }}
+    >
+      <Avatar.Fallback 
+        style={{ fontSize: '12px' }} // Adjust font size here
+      >
+        {name}
+      </Avatar.Fallback>
+      <Float placement="bottom-end" offsetX="1" offsetY="1">
+        <Circle
+          bg="green.500"
+          size="8px" // Reduced size for Circle
+          outline="0.1em solid" // Thinner outline
+          outlineColor="bg"
+        />
+      </Float>
+    </Avatar.Root>
+  );
+};
 
 function Sidebar() {
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const status = useSelector((state)=>state.sidebar)
     const openSection = useSelector((state)=>state.openSection)
+    const isAuth = useSelector((state)=>state.isAuth.status)
+    const name = useSelector((state)=>state.isAuth.info) || ''
+    const sperateName = name.trim().split(' ')
 
     
   return (
     <div className={`sidebarContainer ${status?'showSidebar':'hideSidebar'}`}>
         <div className='sidebarUser-cart'>
-        <FontAwesomeIcon icon={faCircleUser} />
+        
+        {isAuth?<UserProfile name={sperateName[0][0] + sperateName.at(-1)[0]} />:<FontAwesomeIcon icon={faCircleUser} onClick={()=>navigate('/login')} />}
         <FontAwesomeIcon icon={faCircleXmark} onClick={()=>dispatch(sidebar())} />
         </div>
 

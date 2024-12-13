@@ -8,15 +8,20 @@ const rootReducer = createSlice({
         sidebar : false,
         searchSidebar : false,
         openSection : null,
+        isAuth : {
+            status : false,
+            info : null
+        }
     },
     reducers:{
         sidebar : (state)=> {state.sidebar = !state.sidebar},
         searchSidebarToggle : (state)=> {state.searchSidebar = !state.searchSidebar},
         toggleSection : (state,action) => {state.openSection = state.openSection === action.payload?null:action.payload},
+        isAuthentication : (state,action) => {state.isAuth.status = !state.isAuth.status,state.isAuth.info = !state.isAuth.info?action.payload:null}
     }
 })
 
-export const {sidebar,searchSidebarToggle,toggleSection} = rootReducer.actions
+export const {sidebar,searchSidebarToggle,toggleSection,isAuthentication} = rootReducer.actions
 
 
 const store = configureStore({
