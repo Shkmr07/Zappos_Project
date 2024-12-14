@@ -113,6 +113,84 @@
     font-weight: bold;
 }
 
+.newArrival  > div{
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+}
+
+.newArrival > div div:first-child{
+    padding: 15px;
+    overflow: hidden;
+}
+
+.newArrival > div div:first-child img{
+    width: 100%;
+    object-fit: contain;
+}
+
+.sparkle{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 20px;
+    padding: 30px;
+}
+
+.sparkle > img{
+    width: 70%;
+    border-radius: 10px;
+}
+
+.sparkle > div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    align-items: center;
+}
+
+.sparkle > div > h1{
+    font-size: 22px ;
+    font-weight: bold;
+}
+
+.sparkle > div > p{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.sparkle > div > a{
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-weight: bold;
+}
+
+.banner{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.banner > h1{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.banner > div{
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.banner > div > div img{
+    width: 100%;
+    border-radius: 10px;
+}
+
   
   @media screen and (max-width:650px) {
         .trandingNowSub-Div{
@@ -157,6 +235,58 @@
             display: inline-block;
             width: 90%;
             padding: 10px;
+        }
+
+        .newArrival > div{
+            display: block;
+            white-space: nowrap;
+            overflow-x: auto;
+            margin: 20px;
+        }
+        
+        .newArrival > div > div{
+            display: inline-block;
+            width: 90%;
+            margin: 20px;
+        }
+        
+        .newArrival > div::-webkit-scrollbar{
+            border: 1px solid black;
+            height: 10px;
+            border-radius: 5px;
+        }
+
+        .newArrival > div::-webkit-scrollbar-thumb{
+            background-color: black;
+            border-radius: 5px;
+        }
+
+        .sparkle{
+            display: block;
+
+        }
+
+        .sparkle > img{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .sparkle > div{
+            gap: 5px;
+            
+        }
+
+        .sparkle > div > h1{
+            font-size: 18px;
+        }
+
+        .sparkle > div > p,a{
+            font-size: 16px;
+        }
+
+        .banner > div{
+            flex-direction: column;
+            gap: 15px;
         }
 
   }
