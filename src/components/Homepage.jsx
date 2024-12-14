@@ -26,21 +26,21 @@ export default function Homepage() {
       image: keen,
       productName: "Houser III Slider",
       category: `Women's`,
-      price: "$99.98",
+      price: "99.98",
     },
     {
       title: "Hunter Kids",
       image: hunter,
       productName: "Cozy (Little kid/ Big kid)",
       category: `Kid's`,
-      price: "$120.00",
+      price: "120.00",
     },
     {
       title: "Hey Dude",
       image: Dude,
       productName: "Wendy Disco sequin",
       category: `Women's`,
-      price: "$69.99",
+      price: "69.99",
     },
   ];
 

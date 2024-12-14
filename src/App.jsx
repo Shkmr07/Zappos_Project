@@ -6,6 +6,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Homepage from "./components/Homepage";
 import Contact from "./components/Contact";
 import Login from "./components/Login";
+import ProductsPage from "./components/ProductsPage";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/productPage/:string" element={<ProductsPage />} />
       </Routes>
       {!hideNavbarFooter && <Footer />}
     </>

@@ -78,6 +78,75 @@
     gap: 25px;
 }
 
+.navbarContainer > nav > a {
+    text-decoration: none; /* Remove the underline */
+    color: black; /* Default color for the links */
+     /* Adjust the font size for better readability */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for hover effects */
+    padding: 5px;
+    border-radius: 5px; /* Rounded corners for hover background (optional) */
+}
+
+.navbarContainer > nav > a:hover {
+    color: rgb(75, 138, 227); /* Change color on hover */
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2); /* Add subtle shadow on hover */
+    background-color: rgba(75, 138, 227, 0.1); /* Light blue background for hover effect */
+}
+
+.navbarContainer > nav > a:active {
+    color: rgb(35, 88, 187); /* Slightly darker color when clicked */
+    background-color: rgba(75, 138, 227, 0.2); /* Slightly darker hover background on click */
+}
+
+.navbarContainer > nav > a:focus {
+    outline: 2px solid rgb(75, 138, 227); /* Add focus outline for accessibility */
+    outline-offset: 2px;
+}
+
+.helpSupport > a {
+    text-decoration: none; /* Remove underline */
+    padding: 5px;/* Add some padding for a better click area */
+    border-radius: 5px; /* Rounded corners for hover effects */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions for hover effects */
+    display: inline-block; /* Ensure padding and hover effects apply properly */
+}
+
+.helpSupport > a:hover {
+    color: rgb(75, 138, 227); /* Change text color to blue on hover */
+    background-color: rgba(75, 138, 227, 0.1); /* Add a light blue background on hover */
+}
+
+.helpSupport > a:active {
+    color: rgb(35, 88, 187); /* Slightly darker blue when clicked */
+    background-color: rgba(75, 138, 227, 0.2); /* Darker hover background on click */
+}
+
+.helpSupport > a:focus {
+    outline: 2px solid rgb(75, 138, 227); /* Focus outline for accessibility */
+    outline-offset: 2px;
+}
+
+
+.user-cart svg {
+    transition: color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+    cursor: pointer; /* Indicate that the icons are interactive */
+}
+
+.user-cart svg:hover {
+    color: rgb(75, 138, 227); /* Change color to blue on hover */
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+.user-cart div {
+    transition: color 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.user-cart div:hover {
+    color: rgb(75, 138, 227); /* Change text color to blue when hovered */
+}
+
+
+
 .user-cart svg:last-child{
     display: none;
 }
@@ -124,8 +193,17 @@
 }
 
 @media screen and (min-width:768px) and (max-width:1024px) {
-    .navbarContainer a{
+    .navbarContainer > nav > a{
         font-size: 0.8em;
+        padding: 2px;
+        border-radius: 2px;
+    }
+
+    .helpSupport > a{
+        font-size: 0.8em;
+        padding: 2px;
+        border-radius: 2px;
+
     }
     .searchSection input{
         padding: 8px 80px 8px 35px;

@@ -1,4 +1,5 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { data } from "./productData";
 import logger from "redux-logger";
 
 
@@ -11,7 +12,8 @@ const rootReducer = createSlice({
         isAuth : {
             status : false,
             info : null
-        }
+        },
+        products : data
     },
     reducers:{
         sidebar : (state)=> {state.sidebar = !state.sidebar},

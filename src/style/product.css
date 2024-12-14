@@ -1,0 +1,110 @@
+/* For the overall product page layout */
+.productPage {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  /* Filters on the left side */
+  .filters {
+    width: 25%;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* For each filter item */
+  .filters div {
+    margin-bottom: 20px;
+  }
+
+  .filters > div > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1.5px dotted black;
+  }
+  
+  .filters > div > div h1 {
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: bold;
+  }
+  
+  .filters > div > ul {
+    list-style-type: none;
+    padding: 10px 0px;
+    margin-bottom: 10px;
+    border-bottom: 1.5px dotted black;
+  }
+
+  .filters > div > ul > li{
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+
+  .filters > div > ul > li:hover{
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  
+  /* Display products in grid format */
+  .displayProducts {
+    width: 70%;
+    padding: 20px;
+  }
+  
+    .displayProducts > div > h1{
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .displayProducts > div > p{
+        font-weight: 500;
+    }
+
+
+  /* Grid styling for products */
+  .displayProducts > div > div{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    padding: 20px 0px;
+  }
+  
+  
+  /* Link for 'Find what you're looking for?' */
+  .displayProducts > div > a {
+    font-size: 14px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  
+  .displayProducts > div a:hover {
+    color: blue;
+  }
+
+
+  @media screen and (max-width:768px) {
+    .filters{
+        display: none;
+    }
+
+    .displayProducts > div > div{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .productPage{
+        display: block;
+    }
+
+    .displayProducts {
+        width: 100%;
+    }
+
+    .displayProducts > div > div{
+        font-size: 0.8em;
+    }
+  }
+

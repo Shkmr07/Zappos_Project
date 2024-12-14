@@ -44,14 +44,11 @@ export default function Navbar() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const navItem = ['New','Women','Men','Kids','Collections','Brands','Sale','Activity','Gifts']
-  const [isActive,setIsActive]  = useState(false)
+  const products = useSelector((state)=>state.products)
   const isAuth = useSelector((state)=>state.isAuth.status)
   const name = useSelector((state)=>state.isAuth.info) || ''
   const sperateName = name.trim().split(' ')
 
-  function toggle(){
-    setIsActive((prev)=>!prev)
-  }
   
 
   return (
@@ -73,15 +70,18 @@ export default function Navbar() {
 
       <div className='navbarContainer'>
         <nav>
-          {navItem.map(item=>(
-            <div key={item}>
-            <NavLink to='/' onClick={toggle} >{item}</NavLink>
-            {isActive && <div>hello</div>}
-            </div>
-          ))}
+          <NavLink to='/productPage/all'>New</NavLink>
+          <NavLink to='/productPage/Women'>Women</NavLink>
+          <NavLink to='/productPage/Men'>Men</NavLink>
+          <NavLink to='/productPage/Kids'>Kids</NavLink>
+          <NavLink to='/productPage/all'>Collections</NavLink>
+          <NavLink to='/productPage/all'>Brands</NavLink>
+          <NavLink to='/productPage/all'>Sales</NavLink>
+          <NavLink to='/productPage/all'>Activity</NavLink>
+          <NavLink to='/productPage/all'>Gifts</NavLink>
         </nav>
         <div className='helpSupport'>
-          <NavLink>Help & Support</NavLink>
+          <NavLink to='/contact'>Help & Support</NavLink>
         </div>
       </div>
     </div>
