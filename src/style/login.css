@@ -91,4 +91,12 @@
   .login-footer a:hover {
     text-decoration: underline;
   }
+
+
+  .error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+  
   

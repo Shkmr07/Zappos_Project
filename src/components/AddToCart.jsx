@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 const AddToCart = ({ cart, onClose }) => {
   const cartItems = useSelector((state) => state.cartItems);
   const subTotal = cartItems.reduce((total, item) => total + item.price, 0);
+  const status = useSelector((state)=>state.isAuth.status)
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -157,6 +158,7 @@ const AddToCart = ({ cart, onClose }) => {
               w={{ base: "100%", sm: "60%" }}
               _hover={{ bg: "blue.500" }} 
               onClick={handleProceedToPayment}
+              disabled={!status}
             >
               Proceed to Payment
             </Button>

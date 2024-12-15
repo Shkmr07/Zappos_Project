@@ -1,28 +1,45 @@
-
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "../style/login.css";
-import ZapposLogo from "@/assets/ZapposLogo.svg";
 import { useNavigate } from "react-router-dom";
-import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { isAuthentication } from "../store";
 
-
 export default function Login() {
+  const text = useRef();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const text = useRef()
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState(""); // To store validation error
 
-  function handleForm(event){
-    event.preventDefault()
-    dispatch(isAuthentication(text.current.value))
-    navigate('/')
+  function handleForm(event) {
+    event.preventDefault();
+
+    // Password validation: Check if it meets the criteria
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters long.");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match.");
+      return;
+    }
+
+    // Clear errors and proceed if validation passes
+    setError("");
+    dispatch(isAuthentication(text.current.value));
+    navigate("/");
   }
 
   return (
     <div className="login-container">
-      <img src='https://m.media-amazon.com/images/G/01/zappos/melody/logo-blue-small._CB485919770_.svg' alt="Zappos Logo" className="logo" />
+      <img
+        src="https://m.media-amazon.com/images/G/01/zappos/melody/logo-blue-small._CB485919770_.svg"
+        alt="Zappos Logo"
+        className="logo"
+      />
       <div className="login-form">
         <h1>Create account</h1>
         <form onSubmit={handleForm}>
@@ -33,7 +50,13 @@ export default function Login() {
           <input type="email" id="email" placeholder="Your email address" />
 
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" placeholder="Password" />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)} // Update state on input change
+          />
           <p className="info">Passwords must be at least 6 characters.</p>
 
           <label htmlFor="confirm-password">Re-enter password</label>
@@ -41,7 +64,12 @@ export default function Login() {
             type="password"
             id="confirm-password"
             placeholder="Confirm password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)} // Update state on input change
           />
+
+          {/* Display error message if validation fails */}
+          {error && <p className="error-message">{error}</p>}
 
           <button type="submit">Create your Zappos account</button>
         </form>
