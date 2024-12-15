@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faStar as empty } from "@fortawesome/free-regular-svg-icons";
 import { faStar as filled } from "@fortawesome/free-solid-svg-icons";
-export default function CreateCard({ item }) {
+export default function CreateCard({ item,onClick }) {
   const { image, title, productName, category, price } = item;
   return (
-    <div className="card">
+    <div className="card" onClick={onClick}>
       <div className="heart-icon">
       <FontAwesomeIcon icon={faHeart} />
 

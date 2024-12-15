@@ -6,8 +6,6 @@ import '../style/Sidebar.css'
 import { sidebar, toggleSection } from '../store'
 import { Link, useNavigate } from 'react-router-dom'
 
-
-
 import { Avatar, Circle, Float } from "@chakra-ui/react"
 
 const UserProfile = ({ name }) => {
@@ -61,10 +59,9 @@ function Sidebar() {
             <FontAwesomeIcon icon={openSection === 'New'?faChevronUp:faChevronDown} />
             </div>
             {openSection === 'New' && (
-
             <ul>
-              <Link>New by Category</Link>
-              <Link>The Style Room</Link>
+              <Link to='/productPage/all'>New by Category</Link>
+              <Link to='/productPage/all'>The Style Room</Link>
             </ul>
             )}
           </div>
@@ -76,10 +73,9 @@ function Sidebar() {
             </div>
 
             {openSection === 'Women' && (
-
             <ul>
-              <Link>Shoes</Link>
-              <Link>Clothing</Link>
+              <Link to='/productPage/Women'>Shoes</Link>
+              <Link to='/productPage/Women'>Clothing</Link>
             </ul>
             )}
           </div>
@@ -90,10 +86,9 @@ function Sidebar() {
             <FontAwesomeIcon icon={openSection === 'Men'?faChevronUp:faChevronDown} />
             </div>
             {openSection === 'Men' && (
-
             <ul>
-            <Link>Shoes</Link>
-            <Link>Clothing</Link>
+              <Link to='/productPage/Men'>Shoes</Link>
+              <Link to='/productPage/Men'>Clothing</Link>
             </ul>
             )}
           </div>
@@ -105,10 +100,9 @@ function Sidebar() {
             </div>
             {openSection === 'Kids' && (
             <ul>
-            <Link>Shoes</Link>
-            <Link>Clothing</Link>
+              <Link to='/productPage/Kids'>Shoes</Link>
+              <Link to='/productPage/Kids'>Clothing</Link>
             </ul>
-
             )}
           </div>
 
@@ -118,10 +112,9 @@ function Sidebar() {
             <FontAwesomeIcon icon={openSection === 'collections'?faChevronUp:faChevronDown} />
             </div>
             {openSection === 'collections' && (
-
             <ul>
-              <Link>Trending Brands</Link>
-              <Link>The Style Room</Link>
+              <Link to='/productPage/all'>Trending Brands</Link>
+              <Link to='/productPage/all'>The Style Room</Link>
             </ul>
             )}
           </div>
@@ -132,10 +125,9 @@ function Sidebar() {
             <FontAwesomeIcon icon={openSection === 'brands'?faChevronUp:faChevronDown} />
             </div>
             {openSection === 'brands' && (
-
             <ul>
-              <Link>Featured Brands</Link>
-              <Link>Dolce vita</Link>
+              <Link to='/productPage/all'>Featured Brands</Link>
+              <Link to='/productPage/all'>Dolce vita</Link>
             </ul>
             )}
           </div>
@@ -146,10 +138,9 @@ function Sidebar() {
             <FontAwesomeIcon icon={openSection === 'sales'?faChevronUp:faChevronDown} />
             </div>
             {openSection === 'sales' && (
-
             <ul>
-              <Link>Womens's Sale</Link>
-              <Link>Men's Sale</Link>
+              <Link to='/productPage/all'>Women's Sale</Link>
+              <Link to='/productPage/all'>Men's Sale</Link>
             </ul>
             )}
           </div>
@@ -160,10 +151,9 @@ function Sidebar() {
             <FontAwesomeIcon icon={openSection === 'activity'?faChevronUp:faChevronDown} />
             </div>
             {openSection === 'activity' && (
-
             <ul>
-              <Link>Women</Link>
-              <Link>Men</Link>
+              <Link to='/productPage/all'>Women</Link>
+              <Link to='/productPage/all'>Men</Link>
             </ul>
             )}
           </div>
@@ -174,14 +164,12 @@ function Sidebar() {
             <FontAwesomeIcon icon={openSection === 'help'?faChevronUp:faChevronDown} />
             </div>
             {openSection === 'help' && (
-
             <ul>
-              <Link>Get Help</Link>
-              <Link>FAQs</Link>
+              <Link to='/contact'>Get Help</Link>
+              <Link to='/contact'>FAQs</Link>
             </ul>
             )}
           </div>
-
 
         </div>
 

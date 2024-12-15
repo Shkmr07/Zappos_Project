@@ -1,48 +1,101 @@
-.sidebarContainer{
+/* Sidebar container */
+.sidebarContainer {
     position: absolute;
+    z-index: 1000;
     width: 300px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     background-color: white;
-    top:0px;
+    top: 0px;
     right: 0px;
     height: 100vh;
- 
 }
 
-.sidebarUser-cart{
+/* User and cart section */
+.sidebarUser-cart {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     font-size: xx-large;
     border-bottom: 1px solid rgb(239, 226, 226);
-
 }
 
-.showSidebar{
+/* Show/Hide Sidebar */
+.showSidebar {
     display: inline-block;
 }
 
-.hideSidebar{
+.hideSidebar {
     display: none;
 }
 
-
-.sidebarMenu div div{
+/* Sidebar menu sections */
+.sidebarMenu div div {
     display: flex;
     justify-content: space-between;
     padding: 20px;
     border-bottom: 1px dotted black;
 }
 
-.sidebarMenu div div h2{
+/* Sidebar headings */
+.sidebarMenu div div h2 {
     font-weight: bold;
 }
 
-.sidebarMenu div ul{
+/* Sidebar menu lists */
+.sidebarMenu div ul {
     display: flex;
     flex-direction: column;
-    gap: 10px ;
+    gap: 10px;
     padding: 5px 20px;
     border-bottom: 1px dotted black;
+}
+
+/* Link styling */
+.sidebarMenu div ul a {
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.sidebarMenu div ul a:hover {
+    color: white;
+    background-color: #007BFF; /* Change background color on hover */
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Hover effect for the close button (crossmark) */
+.sidebarUser-cart .faCircleXmark {
+    cursor: pointer;
+    transition: transform 0.2s, color 0.3s;
+}
+
+.sidebarUser-cart .faCircleXmark:hover {
+    transform: scale(1.1);
+    color: #FF0000; /* Red color on hover */
+}
+
+/* Hover effect for the user circle (Avatar) */
+.sidebarUser-cart .faCircleUser,
+.sidebarUser-cart .userProfileCircle {
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.sidebarUser-cart .faCircleUser:hover,
+.sidebarUser-cart .userProfileCircle:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    background-color: #f0f0f0; /* Light background color when hovering */
+}
+
+/* User profile circle hover effect (for UserProfile component) */
+.userProfileCircle {
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.userProfileCircle:hover {
+    background-color: #f5f5f5; /* Change background on hover */
 }

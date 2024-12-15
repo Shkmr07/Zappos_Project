@@ -4,11 +4,22 @@ import { faBagShopping, faMagnifyingGlass,faBars } from '@fortawesome/free-solid
 import { faCircleUser } from '@fortawesome/free-regular-svg-icons'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { searchSidebarToggle, sidebar } from '../store'
-import '../style/navbar.css'
-import { useState } from 'react'
-
+import { searchSidebarToggle, sidebar, toggleCart } from '../store'
 import { Avatar, Circle, Float } from "@chakra-ui/react"
+import AddToCart from './AddToCart'
+import '../style/navbar.css'
+
+
+
+
+
+
+
+
+
+
+
+
 
 const UserProfile = ({ name }) => {
   return (
@@ -48,12 +59,14 @@ export default function Navbar() {
   const isAuth = useSelector((state)=>state.isAuth.status)
   const name = useSelector((state)=>state.isAuth.info) || ''
   const sperateName = name.trim().split(' ')
+  const cart = useSelector((state)=>state.cart)
 
   
 
   return (
     <div className='headerContainer'>
       <div className='header'>
+        <AddToCart cart={cart} onClose={()=>dispatch(toggleCart())} />
         <img src={ZapposLogo} alt="Zappos Logo" onClick={()=>navigate('/')} />
         <div className='searchSection'>
           <FontAwesomeIcon className='search-icon' icon={faMagnifyingGlass} />
@@ -63,7 +76,7 @@ export default function Navbar() {
         <div className='user-cart'>
           {isAuth?<UserProfile name={sperateName[0][0] + sperateName.at(-1)[0]} />:<FontAwesomeIcon icon={faCircleUser} onClick={()=>navigate('/login')} />}
         <FontAwesomeIcon onClick={()=>dispatch(searchSidebarToggle())} icon={faMagnifyingGlass} />
-        <FontAwesomeIcon icon={faBagShopping} />
+        <FontAwesomeIcon onClick={()=>dispatch(toggleCart())} icon={faBagShopping} />
         <FontAwesomeIcon onClick={()=>dispatch(sidebar())} icon={faBars} />
         </div>
       </div>

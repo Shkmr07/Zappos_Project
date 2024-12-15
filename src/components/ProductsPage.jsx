@@ -75,7 +75,7 @@ export default function ProductsPage() {
 
             <div>
             {filterData.map(item=>(
-                <CreateCard item={item} />
+                <CreateCard key={item.id} item={item} onClick={()=>navigate(`/productDetail/${item.id}`)} />
             ))}
 
             </div>

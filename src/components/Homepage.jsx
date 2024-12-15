@@ -16,10 +16,13 @@ import banner2 from "@/assets/banner2.png";
 import banner3 from "@/assets/banner3.png";
 import "../style/homepage.css";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CreateCard from "./CreateCard";
 
 export default function Homepage() {
+
+  const navigate = useNavigate()
+
   const newArrival = [
     {
       title: "KEEN",
@@ -51,27 +54,27 @@ export default function Homepage() {
         <div className="trandingNowSub-Div">
           <div>
             <img src={LifeSytle} alt="LifeStyle" />
-            <Link to="#">LifeStyle Sneakers</Link>
+            <Link to="/productPage/all">LifeStyle Sneakers</Link>
           </div>
           <div>
             <img src={Boots} alt="Boots" />
-            <Link to="#">Boots</Link>
+            <Link to="/productPage/all">Boots</Link>
           </div>
           <div>
             <img src={Heels} alt="Heels" />
-            <Link to="#">Heels</Link>
+            <Link to="/productPage/Women">Heels</Link>
           </div>
           <div>
             <img src={Loffers} alt="Loafers" />
-            <Link to="#">Loafers</Link>
+            <Link to="/productPage/Men">Loafers</Link>
           </div>
           <div>
             <img src={Sleepwear} alt="Sleeepwear" />
-            <Link to="#">Sleepwear</Link>
+            <Link to="/productPage/all">Sleepwear</Link>
           </div>
           <div>
             <img src={Sleeper} alt="Slippers" />
-            <Link to="#">Slippers</Link>
+            <Link to="/productPage/all">Slippers</Link>
           </div>
         </div>
       </div>
@@ -79,11 +82,11 @@ export default function Homepage() {
       <div className="UGG">
         <div>
           <img src={UGGHoliday} alt="UGG" />
-          <Link>Shop the Looks</Link>
+          <Link to="/productPage/all">Shop the Looks</Link>
         </div>
         <div>
           <img src={UGGHolidayShoe} alt="UGG" />
-          <Link>Shop all UGG</Link>
+          <Link to='/productPage/all'>Shop all UGG</Link>
         </div>
       </div>
 
@@ -92,15 +95,15 @@ export default function Homepage() {
         <div>
           <div>
             <img src={UGGHoliday} alt="UGG" />
-            <Link>Shop UGG Boots</Link>
+            <Link to='/productPage/all'>Shop UGG Boots</Link>
           </div>
           <div>
             <img src={UGGHolidayShoe} alt="UGG" />
-            <Link>Shop UGG Classics</Link>
+            <Link to='/productPage/all'>Shop UGG Classics</Link>
           </div>
           <div>
             <img src={UGGHolidayShoe} alt="UGG" />
-            <Link>Shop UGG Kids</Link>
+            <Link to='/productPage/all'>Shop UGG Kids</Link>
           </div>
         </div>
       </div>
@@ -111,7 +114,7 @@ export default function Homepage() {
           </div>
 
           {newArrival.map((item) => (
-            <CreateCard item={item} key={item.title} />
+            <CreateCard onClick={()=>navigate('/productPage/all')} item={item} key={item.title} />
           ))}
         </div>
       </div>
@@ -120,11 +123,11 @@ export default function Homepage() {
         <div>
           <h1>Sparkle in Every Step</h1>
           <p>Soiree-ready styles that say, "I ve arrived."</p>
-          <Link to="#">Shop Sam Edelman</Link>
+          <Link to='/productPage/all'>Shop Sam Edelman</Link>
         </div>
       </div>
 
-      <div className="banner">
+      <div className="banner" onClick={()=>navigate('/productPage/all')}>
         <h1>Ways to Shop & Save!</h1>
 
         <div>
